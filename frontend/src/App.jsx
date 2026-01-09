@@ -1,15 +1,16 @@
-import { useState } from 'react' 
-import PdfUpload from './components/PdfUpload'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import PdfChatLayout from "./components/PdfChatLayout";
+import PostLoginCheck from "./components/PostLoginCheck";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <PdfUpload></PdfUpload>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/chat" element={<PdfChatLayout />} />
+      <Route path="/post-login-check" element={<PostLoginCheck />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
